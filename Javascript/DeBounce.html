@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Debounce example</title>
+  </head>
+  <body>
+    <section>
+      <input type="text" id="searchInput" placeholder="Search..." />
+      <div id="searchResults"></div>
+    </section>
+
+    <script>
+      const throttledSearch = _.throttle(search, 500)
+
+      // Debounce function from Lodash to delay the execution of the search function
+      const debouncedSearch = _.debounce(search, 500)
+
+      // Get references to the search input and results container
+      const searchInput = document.getElementById('searchInput')
+      const searchResults = document.getElementById('searchResults')
+
+      // Event listener for input changes
+      searchInput.addEventListener('input', handleSearchInput)
+
+      function handleSearchInput(event) {
+        const searchTerm = event.target.value
+
+        // Uncomment one of the following lines based on the desired behavior
+
+        // Throttling: Invoke the search function at most once every 500ms
+        // throttledSearch(searchTerm);
+
+         //Debouncing: Wait for 500ms of inactivity before invoking the search function
+         debouncedSearch(searchTerm);
+      }
+
+      function search(searchTerm) {
+        // Perform the search request here, e.g., make an API call
+
+        // Clear previous search results
+        searchResults.innerHTML = ''
+
+        // Display loading indicator or perform any other UI changes
+
+        // Simulating a search request with setTimeout
+        setTimeout(() => {
+          // Process the search results
+          const results = ['Result 1', 'Result 2', 'Result 3']
+
+          // Render the search results
+          results.forEach(result => {
+            const resultElement = document.createElement('div')
+            resultElement.textContent = result
+            searchResults.appendChild(resultElement)
+          })
+        }, 500)
+      }
+    </script>
+  </body>
+</html>
