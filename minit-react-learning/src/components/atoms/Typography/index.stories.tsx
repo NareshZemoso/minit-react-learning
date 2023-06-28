@@ -15,7 +15,7 @@ type Story = StoryObj<typeof Typography>;
  * to learn how to use render functions.
  */
 export const Primary: Story = {
-  render: () => <Typography variant='h1' children='Hi' />,
+  render: () => <Typography variant='h1' children='Hi Naresh' />,
 };
 
 export const Secondary: Story = {

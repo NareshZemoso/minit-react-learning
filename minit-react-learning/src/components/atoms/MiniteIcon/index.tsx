@@ -6,7 +6,7 @@ interface IconAtomProps extends IconButtonProps {
   iconName: string;
 }
 
-const IconAtom: React.FC<IconAtomProps> = ({ iconName, ...rest }) => {
+const MiniteIcon: React.FC<IconAtomProps> = ({ iconName, ...rest }) => {
   return (
     <IconButton {...rest}>
       <Icon >{iconName}</Icon>
@@ -14,4 +14,4 @@ const IconAtom: React.FC<IconAtomProps> = ({ iconName, ...rest }) => {
   );
 };
 
-export default IconAtom;
+export default MiniteIcon;

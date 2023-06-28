@@ -1,6 +1,7 @@
 import React from "react";
-import SelectInput from "../../molecules/selectinput";
-import Button from "../../atoms/button";
+import SelectInput from "../../molecules/Selectinput";
+import Button from "../../atoms/MiniteButton";
+
 
 
 
@@ -27,7 +28,7 @@ const options: SelectOption[] = [
       <div>
         
         <SelectInput options={options} />
-        <Button onClick={handleNeedHelp} children={<span>Need Help</span>}/>
+        <Button onClick={handleNeedHelp} children='Need Help' variant={"contained"} size={"small"}/>
       </div>
     );
   };

@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import  IconAtom  from './index';
+import  MiniteIcon  from './index';
 
-const meta: Meta<typeof IconAtom> = {
-  component: IconAtom,
+const meta: Meta<typeof MiniteIcon> = {
+  component: MiniteIcon,
 };
 
 export default meta;
-type Story = StoryObj<typeof IconAtom>;
+type Story = StoryObj<typeof MiniteIcon>;
 const handleNeedHelp = () => {
     console.log("Need help");
     alert('Need help');
@@ -19,13 +19,13 @@ const handleNeedHelp = () => {
  * to learn how to use render functions.
  */
  export const Large: Story = {
-    render: () => <IconAtom iconName='24' color='primary' size='large'/>,
+    render: () => <MiniteIcon iconName='24' color='primary' size='large'/>,
   };
 
 export const Medium: Story = {
-  render: () => <IconAtom iconName='24' color="primary" size='medium'/>,
+  render: () => <MiniteIcon iconName='24' color="primary" size='medium'/>,
 };
 
 export const Small: Story = {
-    render: () => <IconAtom iconName='24' color='primary' size='small'/>,
+    render: () => <MiniteIcon iconName='24' color='primary' size='small'/>,
   };

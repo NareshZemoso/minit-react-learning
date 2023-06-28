@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import  Button  from './index';
+import  MiniteButton  from './index';
 
-const meta: Meta<typeof Button> = {
-  component: Button,
+const meta: Meta<typeof MiniteButton> = {
+  component: MiniteButton,
 };
 
 export default meta;
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof MiniteButton>;
 const handleNeedHelp = () => {
     console.log("Need help");
     alert('Need help');
@@ -19,9 +19,11 @@ const handleNeedHelp = () => {
  * to learn how to use render functions.
  */
 export const Primary: Story = {
-  render: () => <Button onClick={handleNeedHelp} children='Need Help' fgColor='primary'/>,
+  render: () => <MiniteButton variant='contained' onClick={handleNeedHelp} children='SELL' fgColor='primary' size='large'/>,
 };
 
 export const Secondary: Story = {
-    render: () => <Button onClick={handleNeedHelp} children='Need Help' fgColor='#ff5722'/>,
+    render: () => <MiniteButton variant='outlined' onClick={handleNeedHelp} children='Need Help' fgColor='primary' size='medium'/>,
   };
+
+ 

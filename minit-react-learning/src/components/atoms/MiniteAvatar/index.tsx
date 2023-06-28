@@ -11,7 +11,7 @@ const MiniteAvatar: React.FC<AvatarProps> = ({ imageUrl, altText = 'Avatar', siz
   return (
     <>
     <Stack spacing={4}>     
-      <Avatar src={imageUrl} />
+      <Avatar src={imageUrl} alt={altText}/>
     </Stack>
     </>
   )
