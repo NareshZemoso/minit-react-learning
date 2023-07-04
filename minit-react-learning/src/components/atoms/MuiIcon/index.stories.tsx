@@ -1,26 +1,26 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import  MuiIcon  from './index';
-
-
-
-
-
-
-const meta: Meta<typeof MuiIcon> = {
+import MuiIcon from ".";
+import { ComponentStory } from "@storybook/react";
+import bitcoin from '../../../../public/assets/bitcoin.png';
+export default {
+  /* 👇 The title prop is optional.
+  * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
+  * to learn how to generate automatic titles
+  */
+  title: 'atoms/MuiIcon',
   component: MuiIcon,
 };
-type Story = StoryObj<typeof MuiIcon>;
-export default meta;
+
+const Template:ComponentStory < typeof MuiIcon>= (args) => (
+  <MuiIcon {...args} />
+);
 
 
- export const Primary: Story = {
-    render: () => <MuiIcon url={'https://randomuser.me/api/portraits/men/51.jpg'}  />
-  };
 
-  export const Bitcoin: Story = {
-    render: () => <MuiIcon url="./bitcoin.jpg"/>
-  };
+export const Secondary = Template.bind({});
+Secondary.args = {
+  url:bitcoin,
+  height:24,
+  width:24,
+};
 
-
- 
 

@@ -5,11 +5,11 @@ interface SelectOption {
   label: string;
 }
 
-interface AtomSelectProps {
+interface SelectInputProps {
   options: SelectOption[];
 }
 
-const SelectInput: React.FC<AtomSelectProps> = ({ options }) => {
+const SelectInput: React.FC<SelectInputProps> = ({ options }) => {
   const [selectedValue, setSelectedValue] = useState<string>('');
 
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {

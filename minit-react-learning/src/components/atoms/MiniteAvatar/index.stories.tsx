@@ -1,19 +1,25 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
-import  MiniteAvatar  from './index';
-
-const meta: Meta<typeof MiniteAvatar> = {
+import MiniteAvatar from ".";
+import { ComponentStory } from "@storybook/react";
+import avatar from '../../../../public/assets/avatar.png';
+export default {
+  /* 👇 The title prop is optional.
+  * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
+  * to learn how to generate automatic titles
+  */
+  title: 'atoms/MiniteAvatar',
   component: MiniteAvatar,
 };
 
-export default meta;
-type Story = StoryObj<typeof MiniteAvatar>;
+const Template:ComponentStory < typeof MiniteAvatar>= (args) => (
+  <MiniteAvatar {...args} />
+);
 
-/*
- *👇 Render functions are a framework specific feature to allow you control on how the component renders.
- * See https://storybook.js.org/docs/react/api/csf
- * to learn how to use render functions.
- */
-export const Primary: Story = {
-  render: () => <MiniteAvatar imageUrl='https://randomuser.me/api/portraits/men/51.jpg' size={50} altText='altText'/>,
+
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  imageUrl:avatar,
+  size:32,
 };
+
+

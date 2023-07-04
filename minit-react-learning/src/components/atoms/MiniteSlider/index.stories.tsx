@@ -1,20 +1,29 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
-import  MiniteSlider  from './index';
-
-const meta: Meta<typeof MiniteSlider> = {
+import MiniteSlider from ".";
+import { ComponentStory } from "@storybook/react";
+import bitcoin from '../../../../public/assets/bitcoin.png';
+import logout from '../../../../public/assets/logout.png';
+export default {
+  /* 👇 The title prop is optional.
+  * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
+  * to learn how to generate automatic titles
+  */
+  title: 'atoms/MiniteSlider',
   component: MiniteSlider,
 };
-type Story = StoryObj<typeof MiniteSlider>;
-export default meta;
+
+const Template:ComponentStory < typeof MiniteSlider>= (args) => (
+  <MiniteSlider {...args} />
+);
+
+export const Primary = Template.bind({});
+Primary.args = {
+ 
+};
 
 
- export const Primary: Story = {
-    render: () => <MiniteSlider sliderHeight={50} sliderOrientation='horizontal' sliderWidth={50}/>
-  };
+export const Secondary = Template.bind({});
+Secondary.args = {
 
-  export const Secondary: Story = {
-    render: () => <MiniteSlider sliderHeight={50} sliderOrientation='vertical'/>
-  };
+};
 
 

@@ -1,31 +1,32 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
-import  MiniteIcon  from './index';
-
-const meta: Meta<typeof MiniteIcon> = {
+import MiniteIcon from ".";
+import { ComponentStory } from "@storybook/react";
+import bitcoin from '../../../../public/assets/bitcoin.png';
+import logout from '../../../../public/assets/logout.png';
+export default {
+  /* 👇 The title prop is optional.
+  * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
+  * to learn how to generate automatic titles
+  */
+  title: 'atoms/MiniteIcon',
   component: MiniteIcon,
 };
 
-export default meta;
-type Story = StoryObj<typeof MiniteIcon>;
-const handleNeedHelp = () => {
-    console.log("Need help");
-    alert('Need help');
-  };
+const Template:ComponentStory < typeof MiniteIcon>= (args) => (
+  <MiniteIcon {...args} />
+);
 
-/*
- *👇 Render functions are a framework specific feature to allow you control on how the component renders.
- * See https://storybook.js.org/docs/react/api/csf
- * to learn how to use render functions.
- */
- export const Large: Story = {
-    render: () => <MiniteIcon iconName='24' color='primary' size='large'/>,
-  };
-
-export const Medium: Story = {
-  render: () => <MiniteIcon iconName='24' color="primary" size='medium'/>,
+export const Primary = Template.bind({});
+Primary.args = {
+  iconName:'A'
 };
 
-export const Small: Story = {
-    render: () => <MiniteIcon iconName='24' color='primary' size='small'/>,
-  };
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+ iconName:'25', 
+ size:"large",
+ color:'primary'
+
+};
+
+

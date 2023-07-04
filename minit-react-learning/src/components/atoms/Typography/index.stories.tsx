@@ -1,27 +1,29 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
-import  Typography  from './index';
-
-const meta: Meta<typeof Typography> = {
-  component: Typography,
+import MiniteTypography from ".";
+import { ComponentStory } from "@storybook/react";
+export default {
+  /* 👇 The title prop is optional.
+  * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
+  * to learn how to generate automatic titles
+  */
+  title: 'atoms/MiniteTypography',
+  component: MiniteTypography,
 };
 
-export default meta;
-type Story = StoryObj<typeof Typography>;
+const Template:ComponentStory < typeof MiniteTypography>= (args) => (
+  <MiniteTypography {...args} />
+);
 
-/*
- *👇 Render functions are a framework specific feature to allow you control on how the component renders.
- * See https://storybook.js.org/docs/react/api/csf
- * to learn how to use render functions.
- */
-export const Primary: Story = {
-  render: () => <Typography variant='h1' children='Hi Naresh' />,
+export const Primary = Template.bind({});
+Primary.args = {
+  variant:'h1',
+  children:'select '
 };
 
-export const Secondary: Story = {
-    render: () => <Typography variant='h6' children='Hi' />,
-  };
 
-  export const Caption: Story = {
-    render: () => <Typography variant='caption' children='Caption' />,
-  };
+export const Secondary = Template.bind({});
+Secondary.args = {
+  variant:'h6',
+  children:'select '
+};
+
+

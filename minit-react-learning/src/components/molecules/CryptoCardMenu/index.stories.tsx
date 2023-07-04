@@ -1,17 +1,29 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
-import  CryptoCardMenu  from './index';
-
-const meta: Meta<typeof CryptoCardMenu> = {
+import CryptoCardMenu from ".";
+import { ComponentStory } from "@storybook/react";
+import bitcoin from '../../../../public/assets/bitcoin.png';
+import success from '../../../../public/assets/success.png';
+export default {
+  /* 👇 The title prop is optional.
+  * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
+  * to learn how to generate automatic titles
+  */
+  title: 'molecules/CryptoCardMenu',
   component: CryptoCardMenu,
 };
-type Story = StoryObj<typeof CryptoCardMenu>;
-export default meta;
+
+const Template:ComponentStory < typeof CryptoCardMenu>= (args) => (
+  <CryptoCardMenu {...args} />
+);
 
 
- export const Primary: Story = {
-    render: () => <CryptoCardMenu maxWidth={100} />
-  };
 
- 
+export const Secondary = Template.bind({});
+Secondary.args = {
+  url:bitcoin,
+  currencyType:'Bitcoin',
+  amount:'$ 100',
+  height:150,
+  width:150,
+};
+
 

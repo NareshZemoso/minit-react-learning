@@ -7,7 +7,7 @@ interface AvatarProps {
   size?: number;
 }
 
-const MiniteAvatar: React.FC<AvatarProps> = ({ imageUrl, altText = 'Avatar', size = 50 }) => {
+const MiniteAvatar: React.FC<AvatarProps> = ({ imageUrl, altText = 'Avatar', size = 32 }) => {
   return (
     <>
     <Stack spacing={4}>     

@@ -1,29 +1,54 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { ComponentStory, Meta, StoryObj } from '@storybook/react';
+import theme from '../../../theme';
 
 import  MiniteButton  from './index';
+import { Children } from 'react';
+import MiniteTypography from '../Typography';
 
 const meta: Meta<typeof MiniteButton> = {
   component: MiniteButton,
 };
 
-export default meta;
-type Story = StoryObj<typeof MiniteButton>;
+interface MiniteButtonProps{
+  primary:string;
+}
+
 const handleNeedHelp = () => {
     console.log("Need help");
     alert('Need help');
   };
 
-/*
- *👇 Render functions are a framework specific feature to allow you control on how the component renders.
- * See https://storybook.js.org/docs/react/api/csf
- * to learn how to use render functions.
- */
-export const Primary: Story = {
-  render: () => <MiniteButton variant='contained' onClick={handleNeedHelp} children='SELL' fgColor='primary' size='large'/>,
-};
-
-export const Secondary: Story = {
-    render: () => <MiniteButton variant='outlined' onClick={handleNeedHelp} children='Need Help' fgColor='primary' size='medium'/>,
+  export default {
+    /* 👇 The title prop is optional.
+    * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
+    * to learn how to generate automatic titles
+    */
+    title: 'atoms/MiniteButton',
+    component: MiniteButton,
   };
-
+  
+  const Template:ComponentStory < typeof MiniteButton>= (args) => (
+    <MiniteButton {...args} />
+  );
+  
+  export const Primary = Template.bind({});
+  Primary.args = {
+   onClick: handleNeedHelp,
+   variant:'contained',
+   fgColor: 'primary',
+   size:'large',
+   children:<MiniteTypography variant='body1' color={'white'}>BUY</MiniteTypography>
  
+  };
+  
+  
+  export const Secondary = Template.bind({});
+  Secondary.args = {
+   onClick: handleNeedHelp,
+   variant:'contained',
+   fgColor: 'secondary',
+   size:'large',
+   children:<MiniteTypography variant='body1' color={'white'}>SELL</MiniteTypography>
+ 
+  };
+  

@@ -119,14 +119,74 @@ const theme = createTheme({
           }),
           ...(ownerState.size === 'large' && {
             height: '40px',
+            width: '100px',
+            textTransform: 'none',
+            borderRadius: '5px',
+            '&:hover': {
+              backgroundColor: '#4ABAAD',
+            },
+          }),
+        }),
+        containedSecondary: ({ ownerState }) => ({
+          ...(ownerState.size === 'medium' && {
+            width: '140px',
+            height: '46px',
             textTransform: 'none',
             borderRadius: '8px',
             '&:hover': {
               backgroundColor: '#4ABAAD',
             },
           }),
+          ...(ownerState.size === 'small' && {
+            width: '100px',
+            height: '32px',
+            textTransform: 'none',
+            borderRadius: '8px',
+            '&:hover': {
+              backgroundColor: '#4ABAAD',
+            },
+          }),
+          ...(ownerState.size === 'large' && {
+            height: '40px',
+            width: '100px',
+            textTransform: 'none',
+            borderRadius: '5px',
+            '&:hover': {
+              backgroundColor: '#4ABAAD',
+            },
+          }),
         }),
         outlinedPrimary: ({ ownerState }) => ({
+          ...(ownerState.size === 'medium' && {
+            width: '140px',
+            height: '46px',
+            textTransform: 'none',
+            borderRadius: '8px',
+            '&:hover': {
+              backgroundColor: 'white',
+            },
+          }),
+          ...(ownerState.size === 'large' && {
+            width: '140px',
+            height: '40px',
+            textTransform: 'none',
+            borderRadius: '5px',
+            color:'#3333ff',
+            '&:hover': {
+              backgroundColor: 'white',
+            },
+          }),
+          ...(ownerState.size === 'small' && {
+            width: '156px',
+            height: '159px',
+            textTransform: 'none',
+            borderRadius: '0',
+            '&:hover': {
+              backgroundColor: 'white',
+            },
+          }),
+        }),
+        outlinedSecondary: ({ ownerState }) => ({
           ...(ownerState.size === 'medium' && {
             width: '100px',
             height: '32px',
@@ -191,18 +251,20 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: '#30A193',
-      normal: '#1B877A',
-      dark: '#4ABAAD',
-      light: '#B2FFF6',
-      semilight: '#77EDDF',
-      contrastText: '#fff',
+      main: '#3333ff',
+      normal: '#3333ff',
+      dark: '#3333ff',
+      light: '#3333ff',
+      semilight: '#3333ff',
+      contrastText: '#3333ff',
     },
     secondary: {
-      main: '#0B6D62',
-      light: '#94A196',
-      dark: '#373C38',
-      darker: '#656E66',
+      main: '#ff9933',
+      light: '#ff9933',
+      dark: '#ff9933',
+      darker: '#ff9933',    
+      semilight: '#ff9933',
+      contrastText: '#ff9933',
     },
     greyScale: {
       main: '#E9EBE9',
