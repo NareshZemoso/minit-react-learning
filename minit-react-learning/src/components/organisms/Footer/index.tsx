@@ -8,6 +8,7 @@ import MiniteTypography from '../../atoms/Typography'
 interface SelectOption {
   value: string
   label: string
+  
 }
 
 const options: SelectOption[] = [
@@ -23,9 +24,10 @@ const handleNeedHelp = () => {
 interface FooterProps {
   height: number
   width: number
+  bgcolor: string
 }
 
-const Footer: React.FC<FooterProps> = ({ height, width }) => {
+const Footer: React.FC<FooterProps> = ({ height, width, bgcolor }) => {
   return (
     <Card
       variant='outlined'
@@ -35,10 +37,10 @@ const Footer: React.FC<FooterProps> = ({ height, width }) => {
         alignItems: 'center',
         borderRadius: 0,
         textAlign: 'left',
-        bgcolor:'#e6fffa'
+        bgcolor:{bgcolor}
       }}
     >
-      <Stack direction={'row'} spacing={160} alignItems={'center'} padding={2}>
+      <Stack direction={'row'} spacing={220} alignItems={'center'} padding={2}>
         <Stack direction={'row'} spacing={2}>
           <MiniteTypography variant='h6'>
             <Link href='#' variant='body2' underline='none'>

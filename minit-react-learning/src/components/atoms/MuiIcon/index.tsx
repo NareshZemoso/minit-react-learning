@@ -4,13 +4,13 @@ import { CommonProps } from '@mui/material/OverridableComponent';
 
 interface IconProps {
   url: string;
-  onClickHandler?: React.MouseEventHandler<HTMLImageElement>;
+  onClick?:() => void;
   height:number;
   width:number;
 
 }
 
-const MuiIcon: React.FC<IconProps & CommonProps> = ({ url,height,width }) =>
-<img height={height} width= {width} data-testid='icon' src={url} alt='' loading="lazy"/>
+const MuiIcon: React.FC<IconProps & CommonProps> = ({ url,height,width,onClick }) =>
+<img height={height} width= {width} data-testid='icon' src={url} alt='' loading="lazy" onClick={onClick}/>
 
 export default MuiIcon;

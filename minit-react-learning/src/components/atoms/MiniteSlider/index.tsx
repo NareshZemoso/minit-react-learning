@@ -10,12 +10,14 @@ interface MiniteSliderPros{
     sliderOrientation: "horizontal" | "vertical" | undefined;
     sliderHeight?:number;
     sliderWidth?:number;
+    value:number;
+    handleChange?:() => void;
 }
 
-const MiniteSlider: React.FC<MiniteSliderPros> = ({ sliderOrientation,sliderHeight,sliderWidth}) => {
+const MiniteSlider: React.FC<MiniteSliderPros> = ({ sliderOrientation,sliderHeight,sliderWidth,value,handleChange}) => {
   return (
-    <Stack spacing={2} margin={10} height={sliderHeight} width={sliderWidth}> 
-    <Slider orientation='vertical'/>
+    <Stack  height={sliderHeight} width={sliderWidth}> 
+    <Slider orientation='vertical' aria-label="Volume" />
   </Stack>
   );
 };
