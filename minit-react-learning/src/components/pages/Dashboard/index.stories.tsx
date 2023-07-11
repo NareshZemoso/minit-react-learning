@@ -21,10 +21,8 @@ const Template:ComponentStory < typeof Dashboard>= (args) => (
 
 export const Primary = Template.bind({});
 Primary.args = {
-  header:<Header height={66} width={1476} headertext='Dashboard' bgclor='#fafcff'/>,
-  footer:<Footer height={66} width={1476} bgcolor='#fafcff'/>,
-  navabar:<Navbar height={800} width={60} bgclor='#fafcff'/>,
-  mainbar:<Mainbar height={760} width={1476} children={undefined} bgclor='#fafcff'/>
+ 
+
 };
 
 

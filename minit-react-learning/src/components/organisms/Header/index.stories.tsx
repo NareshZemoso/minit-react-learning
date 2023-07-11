@@ -20,8 +20,8 @@ const Template:ComponentStory < typeof Header>= (args) => (
 export const Secondary = Template.bind({});
 Secondary.args = {
  headertext:'Dashboard',
-  height:60,
-  width:1536,
+  height:82,
+  width:1286,
 };
 
 

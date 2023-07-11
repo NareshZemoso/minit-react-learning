@@ -15,6 +15,13 @@ const Template:ComponentStory < typeof MiniteIcon>= (args) => (
   <MiniteIcon {...args} />
 );
 
+const handleClick = () => {
+  console.log("Need help");
+  alert('Clicked');
+};
+
+
+
 export const Primary = Template.bind({});
 Primary.args = {
   iconName:'A'
@@ -23,9 +30,10 @@ Primary.args = {
 
 export const Secondary = Template.bind({});
 Secondary.args = {
- iconName:'25', 
+ iconName:'1H', 
  size:"large",
- color:'primary'
+ color:'primary',
+ onclick:handleClick
 
 };
 

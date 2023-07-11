@@ -1,7 +1,7 @@
 import { Card, Stack } from '@mui/material';
 import React, { useState } from 'react';
 import MuiIcon from '../../atoms/MuiIcon'; 
-import Typography from '../../atoms/Typography';
+import Typography from '../../atoms/MiniteTypography';
 
 
 interface TotalBalanceProps{

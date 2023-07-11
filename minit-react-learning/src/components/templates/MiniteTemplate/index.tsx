@@ -1,14 +1,7 @@
 import React from 'react'
-import Footer from '../../organisms/Footer'
-import Navbar from '../../organisms/Navbar'
-import Header from '../../organisms/Header'
-import CheckoutSuccess from '../../molecules/CheckoutSuccess'
-import { Box, Drawer, Grid, Stack, styled } from '@mui/material'
-import theme from '../../../theme'
-import Mainbar from '../../organisms/Mainbar'
-import { yellow } from '@mui/material/colors'
+import { Grid } from '@mui/material'
 
-interface SuccessPageProps {
+interface MiniteTemplateProps {
   header: React.ReactNode;
   footer: React.ReactNode;
   children: React.ReactNode;
@@ -18,7 +11,7 @@ interface SuccessPageProps {
 
 
 
-const MiniteTemplate: React.FC<SuccessPageProps> = ({
+const MiniteTemplate: React.FC<MiniteTemplateProps> = ({
   header,
   footer,
   navbar,

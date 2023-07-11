@@ -1,9 +1,10 @@
 import { Card, Stack } from '@mui/material'
 import React, { useState } from 'react'
 import MiniteButton from '../../atoms/MiniteButton'
-import Typography from '../../atoms/Typography'
+import Typography from '../../atoms/MiniteTypography'
 import MiniteSlider from '../../atoms/MiniteSlider'
-import MiniteTypography from '../../atoms/Typography'
+import MiniteTypography from '../../atoms/MiniteTypography'
+import {amountdetails} from '../../../utils/constants'
 
 interface AmountDetailsProps {
   width: number
@@ -31,28 +32,29 @@ const AmountDetails: React.FC<AmountDetailsProps> = ({
         padding: 5
       }}
     >
-      <Typography variant='h3'>Amount details</Typography>
+      <Typography variant='h3'>{amountdetails.amountdetails}</Typography>
 
       <Stack  direction={'column'}>
         <Card variant='outlined' sx={{ padding: 2, height: 74, width: 662,alignItems:'center' }}>
           <Stack spacing={100} direction={'row'} alignItems={'center'} margin={5}>
-            <Typography variant='body1'> 0.100</Typography>
+            <Typography variant='body1'> {amountdetails.amount}</Typography>
             <MiniteButton onClick={onClick} variant={'outlined'} size={'large'}>
-              sell max
+              {amountdetails.sellmax}
             </MiniteButton>
           </Stack>
         </Card>
         <Stack spacing={0} direction={'row'} alignItems={'center'} alignContent={'center'}>
           <MiniteSlider
             sliderOrientation={'vertical'}
-            sliderHeight={100}
-            sliderWidth={1} value={0}  />
-          <MiniteTypography variant='body1' children='BTC = $ 378.89' />
+            sliderHeight={10}
+            defaultValue={1}
+             value={0}  />
+          <MiniteTypography variant='body1' children={amountdetails.btc} />
         </Stack>
         <Card variant='outlined' sx={{ padding: 2, height: 74, width: 662,alignItems:'center' }}>
           <Stack spacing={100} direction={'row'} alignItems={'center'} margin={5}>
-            <Typography variant='body1'>$ 100</Typography>
-            <Typography variant='body1'>USD Coin (Cash)</Typography>
+            <Typography variant='body1'>{amountdetails.dollers}</Typography>
+            <Typography variant='body1'>{amountdetails.usdcoin}</Typography>
           </Stack>
         </Card>
       </Stack>

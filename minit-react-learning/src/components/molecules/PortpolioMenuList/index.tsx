@@ -1,7 +1,5 @@
 import {
   Card,
-  Chip,
-  MenuList,
   Paper,
   Stack,
   Table,
@@ -11,18 +9,17 @@ import {
   TableHead,
   TableRow
 } from '@mui/material'
-import React, { useState } from 'react'
+import React from 'react'
 import MuiIcon from '../../atoms/MuiIcon'
 import bitcoin from '../../../../public/assets/bitcoin.png'
-import graph1 from '../../../../public/assets/graph1.png'
-import pen from '../../../../public/assets/pen.png'
-import plusgrid from '../../../../public/assets/plusgrid.png'
+import binance from '../../../../public/assets/binance.png'
+import cardano from '../../../../public/assets/cardano.png'
+import dogecoin from '../../../../public/assets/dogecoin.png'
+import etherium from '../../../../public/assets/etherium.png'
+
 import list from '../../../../public/assets/list.png'
-import Typography from '../../atoms/Typography'
-import MiniteIconButton from '../../atoms/MiniteButton'
-import MiniteButton from '../../atoms/MiniteButton'
 import PortpolioMenu from '../PortpolioMenu'
-import MiniteTypography from '../../atoms/Typography'
+import MiniteTypography from '../../atoms/MiniteTypography'
 
 interface PortpolioMenuListProps {
   height?: number
@@ -43,33 +40,33 @@ const rows = [
   },
   {
     id: 2,
-    currencyType: 'Bitcoin',
+    currencyType: 'Binance',
     amount: '$ 25',
-    url: bitcoin,
+    url: binance,
     code: 'BTC',
     increment: '+ 0.007 %'
   },
   {
     id: 3,
-    currencyType: 'Bitcoin',
+    currencyType: 'Cardano',
     amount: '$ 25',
-    url: bitcoin,
+    url: cardano,
     code: 'BTC',
     increment: '+ 0.007 %'
   },
   {
     id: 4,
-    currencyType: 'Bitcoin',
+    currencyType: 'Dogecoin',
     amount: '$ 25',
-    url: bitcoin,
+    url: dogecoin,
     code: 'BTC',
     increment: '+ 0.007 %'
   },
   {
     id: 5,
-    currencyType: 'Bitcoin',
+    currencyType: 'Etherium',
     amount: '$ 25',
-    url: bitcoin,
+    url: etherium,
     code: 'BTC',
     increment: '+ 0.007 %'
   },

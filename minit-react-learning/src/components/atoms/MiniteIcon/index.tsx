@@ -1,15 +1,16 @@
 import React from 'react';
-import { IconButton, IconButtonProps } from '@mui/material';
+import { Chip, IconButton, IconButtonProps } from '@mui/material';
 import { Icon } from '@mui/material';
 
-interface IconAtomProps extends IconButtonProps {
+interface MiniteIconProps extends IconButtonProps {
   iconName: string;
+  onclick?:() => void;
 }
 
-const MiniteIcon: React.FC<IconAtomProps> = ({ iconName, ...rest }) => {
+const MiniteIcon: React.FC<MiniteIconProps> = ({ iconName,onClick, ...rest }) => {
   return (
-    <IconButton {...rest}>
-      <Icon >{iconName}</Icon>
+    <IconButton  onClick={onClick} sx={{height:32,widows:32}} {...rest}>
+      <Chip variant='filled' label={iconName}  sx={{height:32,widows:32}}></Chip>
     </IconButton>
   );
 };

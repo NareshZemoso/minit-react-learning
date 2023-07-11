@@ -1,10 +1,7 @@
 import { Card, Stack } from '@mui/material';
-import React, { useState } from 'react';
+import React from 'react';
 import MuiIcon from '../../atoms/MuiIcon'; 
-import bitcoin from '../../../../public/assets/bitcoin.png';
-import Typography from '../../atoms/Typography';
-import MiniteIconButton from '../../atoms/MiniteButton';
-import MiniteButton from '../../atoms/MiniteButton';
+import Typography from '../../atoms/MiniteTypography';
 
 interface CryptoCardMenuProps{
     height?:number;

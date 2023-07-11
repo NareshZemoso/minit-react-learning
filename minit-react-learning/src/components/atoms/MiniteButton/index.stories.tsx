@@ -3,14 +3,14 @@ import theme from '../../../theme';
 
 import  MiniteButton  from './index';
 import { Children } from 'react';
-import MiniteTypography from '../Typography';
+import MiniteTypography from '../MiniteTypography';
 
 const meta: Meta<typeof MiniteButton> = {
   component: MiniteButton,
 };
 
-interface MiniteButtonProps{
-  primary:string;
+const t ={
+
 }
 
 const handleNeedHelp = () => {
@@ -37,7 +37,7 @@ const handleNeedHelp = () => {
    variant:'contained',
    fgColor: 'primary',
    size:'large',
-   children:<MiniteTypography variant='body1' color={'white'}>BUY</MiniteTypography>
+   children:<MiniteTypography variant='body1' color={theme.palette.secondary.light}>BUY</MiniteTypography>
  
   };
   
@@ -51,4 +51,15 @@ const handleNeedHelp = () => {
    children:<MiniteTypography variant='body1' color={'white'}>SELL</MiniteTypography>
  
   };
+
+  export const outlined = Template.bind({});
+  outlined.args = {
+   onClick: handleNeedHelp,
+   variant:'outlined',
+   fgColor: 'primary',
+   size:'large',
+   children:<MiniteTypography variant='body1' color={theme.palette.primary.main}>SELL</MiniteTypography>
+ 
+  };
+  
   

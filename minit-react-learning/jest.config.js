@@ -4,11 +4,12 @@
  */
 
 module.exports = {
+
     testEnvironment: "jsdom",
     coverageDirectory: "coverage",
     collectCoverage: true,
-    collectCoverageFrom: ["src/**/*.{js,jsx}", "!src/**/*stories.{js,jsx}"],
-    setupFiles: ["./src/SetupTests.js"],
+    collectCoverageFrom: ["src/**/*test.{js,jsx,tsx}", "!src/**/*stories.{js,jsx,tsx}"],
+    setupFilesAfterEnv: ["./src/setupTests.ts"],
     coveragePathIgnorePatterns: [
       "<rootDir>/node_modules/",
       ".story.js",
@@ -23,14 +24,17 @@ module.exports = {
       "<rootDir>/src/utils/commandCentermockData.js",
     ],
     transform: {
-      "^.+\\.js?$": "babel-jest",
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
-        "./assetsTransformer.js",
+      '^.+\\.(js|jsx|ts|tsx)$': 'ts-jest',
+      // Other transform configurations...
     },
-    moduleNameMapper: {
-      ".+\\.(css|styl|less|sass|scss)$": "identity-obj-proxy",
+  
+    moduleNameMapper: { 
+           
+      '^/public/(.*)$': '<rootDir>/public/$1',
+      '^utils$': '<rootDir>/src/utils',
+      '^public$': '<rootDir>/public/',
     },
     verbose: true,
-    moduleDirectories: ["node_modules", "src"],
+    moduleDirectories: ["node_modules", "src","public"],
   };
   

@@ -1,8 +1,10 @@
 import { Card, Stack } from '@mui/material'
 import React from 'react'
 import MuiIcon from '../../atoms/MuiIcon'
-import Typography from '../../atoms/Typography'
+import Typography from '../../atoms/MiniteTypography'
 import portpoliograph2 from '../../../../public/assets/portpoliograph2.png'
+import TimePeriodcard from '../TimePeriodCard'
+import {myportpoliovalue} from '../../../utils/constants'
 
 interface MyportfolioValueProps {
   height?: number
@@ -38,8 +40,8 @@ const MyportfolioValue: React.FC<MyportfolioValueProps> = ({
             justifyContent:'center'
           }}
         >
-          <Typography variant='body1' alignItems={'start'}>
-            My portfolio value
+          <Typography variant='body1' alignItems={'start'} padding={5}>
+           {myportpoliovalue.valuelabel}
           </Typography>
 
           <Card
@@ -53,13 +55,17 @@ const MyportfolioValue: React.FC<MyportfolioValueProps> = ({
               padding: 2
             }}
           >
+
+            <Stack direction={'row'} spacing={70} margin={5}>
             <Stack direction={'column'} spacing={2}>
               <Typography variant='body1' alignItems={'start'}>
-                Total investment
+                {myportpoliovalue.totalinvestmentlabel}
               </Typography>
               <Typography variant='body1' alignItems={'start'}>
-                $ 76766.000
+                {myportpoliovalue.totalinvestmentvalue}
               </Typography>
+            </Stack>
+            <TimePeriodcard height={52} width={304} textColor={'#E8E8F7'} onclickText={handleNeedHelp}/>
             </Stack>
           </Card>
           <Stack alignItems={'center'} marginTop={10}>

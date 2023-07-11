@@ -21,12 +21,7 @@ const Template:ComponentStory < typeof SellcheckoutPage>= (args) => (
 
 export const Primary = Template.bind({});
 Primary.args = {
-  header:<Header height={66} width={1476} headertext='Checkout' bgclor='#ffffff'/>,
-  footer:<Footer height={66} width={1476} bgcolor='#ffffff'/>,
-  navabar:<Navbar height={1150} width={60} bgclor='#ffffff'/>,
-  mainbar:<Mainbar height={1000} width={1476} children={undefined} bgclor='#fafcff'/>,
-  bgcolor:'#fafcff'
-  
+
 };
 
 

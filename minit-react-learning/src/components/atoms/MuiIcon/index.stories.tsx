@@ -1,3 +1,4 @@
+import React from "react";
 import MuiIcon from ".";
 import { ComponentStory } from "@storybook/react";
 import bitcoin from '../../../../public/assets/bitcoin.png';

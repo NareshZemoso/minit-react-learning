@@ -18,8 +18,8 @@ const Template:ComponentStory < typeof OrderSummary>= (args) => (
 
 export const Primary = Template.bind({});
 Primary.args = {  
-  cardHeight:666,
-  cardWidth:526,
+  height:666,
+  width:526,
  
 };
 

@@ -10,8 +10,8 @@ interface AvatarProps {
 const MiniteAvatar: React.FC<AvatarProps> = ({ imageUrl, altText = 'Avatar', size = 32 }) => {
   return (
     <>
-    <Stack spacing={4}>     
-      <Avatar src={imageUrl} alt={altText}/>
+    <Stack spacing={4} height={size} width={size}>     
+      <Avatar src={imageUrl} alt={altText} sx={{height:size,width:size}}/>
     </Stack>
     </>
   )

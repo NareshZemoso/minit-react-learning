@@ -20,9 +20,7 @@ const Template:ComponentStory < typeof Success>= (args) => (
 
 export const Primary = Template.bind({});
 Primary.args = {
-  header:<Header height={66} width={1476} headertext='Checkout' bgclor='#fafcff'/>,
-  footer:<Footer height={66} width={1476} bgcolor='#fafcff'/>,
-  navbar:<Navbar height={600} width={60} bgclor='#fafcff'/>
+
   
 };
 

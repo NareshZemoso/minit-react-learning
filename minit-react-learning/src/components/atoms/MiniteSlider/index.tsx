@@ -1,6 +1,6 @@
 
 
-import Stack from '@mui/joy/Stack';
+import {Stack}from '@mui/material';
 import Slider from '@mui/material/Slider';
 import React from 'react';
 
@@ -8,16 +8,17 @@ import React from 'react';
 
 interface MiniteSliderPros{
     sliderOrientation: "horizontal" | "vertical" | undefined;
-    sliderHeight?:number;
-    sliderWidth?:number;
     value:number;
+    defaultValue?:number;
+    sliderHeight?:number;
+    sliderWidth?:number;    
     handleChange?:() => void;
 }
 
-const MiniteSlider: React.FC<MiniteSliderPros> = ({ sliderOrientation,sliderHeight,sliderWidth,value,handleChange}) => {
+const MiniteSlider: React.FC<MiniteSliderPros> = ({ sliderOrientation,sliderHeight,sliderWidth,value,handleChange,defaultValue}) => {
   return (
-    <Stack  height={sliderHeight} width={sliderWidth}> 
-    <Slider orientation='vertical' aria-label="Volume" />
+    <Stack  height={sliderHeight} width={sliderWidth}>    
+    <Slider orientation='vertical' aria-label="Volume" defaultValue={defaultValue} onChange={handleChange} sx={{height:sliderHeight}}/>
   </Stack>
   );
 };

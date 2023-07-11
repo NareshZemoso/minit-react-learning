@@ -4,21 +4,37 @@ import MiniteButton from '../../atoms/MiniteButton'
 import MiniteAvatar from '../../atoms/MiniteAvatar'
 import avatar from '../../../../public/assets/avatar.png'
 import Dropdown from '../../atoms/Dropdown'
-import MiniteTypography from '../../atoms/Typography'
-import theme from '../../../theme'
+import MiniteTypography from '../../atoms/MiniteTypography'
+import { useNavigate } from 'react-router-dom'
+import {header} from '../../../utils/constants'
 
-interface CryptoCard {
+interface HeaderProps {
+  
   height: number
   width: number
   headertext:string
   bgclor:string
+  onClick?:() => void
 }
+
+
+
 const handleNeedHelp = () => {
   console.log('Need help')
   alert('Need help')
+  
 }
 
-const Header: React.FC<CryptoCard> = ({ height, width,headertext,bgclor }) => {
+
+const Header: React.FC<HeaderProps> = ({onClick, height, width,headertext,bgclor }) => {
+
+  const navigate = useNavigate();
+
+  const handleSellButtonClick = () => {
+    // Navigate to the "/dashboard" route programmatically
+    navigate('/sellCheckout');
+  };
+
   return (
     <Card
       variant='outlined'
@@ -31,9 +47,9 @@ const Header: React.FC<CryptoCard> = ({ height, width,headertext,bgclor }) => {
         bgcolor:{bgclor}
       }}
     >
-      <Stack spacing={250} direction={'row'} marginLeft={5} alignItems={'center'} marginTop={3}>
+      <Stack spacing={200} direction={'row'} marginLeft={5} alignItems={'center'} marginTop={3}>
         <Stack alignContent={'start'}>
-          <MiniteTypography variant='h3' padding={1}>
+          <MiniteTypography variant='h5' padding={1}>
             {headertext}
           </MiniteTypography>
         </Stack>
@@ -41,12 +57,12 @@ const Header: React.FC<CryptoCard> = ({ height, width,headertext,bgclor }) => {
         <Stack spacing={1} alignContent={'center'} direction={'row'}>
           <MiniteButton
             fgColor='secondary'
-            onClick={handleNeedHelp}
+            onClick={handleSellButtonClick}
             variant={'contained'}
             size={'large'}
           >
             <MiniteTypography variant='body1' color={'white'}>
-              SELL
+            {header.sell}
             </MiniteTypography>
           </MiniteButton>
           <MiniteButton
@@ -56,7 +72,7 @@ const Header: React.FC<CryptoCard> = ({ height, width,headertext,bgclor }) => {
             size={'large'}
           >
             <MiniteTypography variant='body1' color={'white'}>
-              BUY
+            {header.buy}
             </MiniteTypography>
           </MiniteButton>
           <MiniteAvatar imageUrl={avatar} size={32} />

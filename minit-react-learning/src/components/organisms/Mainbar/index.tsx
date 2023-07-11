@@ -12,7 +12,7 @@ interface MainbarProps {
   children: React.ReactNode
   height: number
   width: number
-  bgclor:string
+  bgclor?:string
 }
 const handleNeedHelp = () => {
   console.log('Need help')

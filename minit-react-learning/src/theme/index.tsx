@@ -73,6 +73,12 @@ const theme = createTheme({
               color: '#4ABAAD',
             }),
         }),
+        h6:({
+          '&:hover': {
+            color: '#000099',
+          }
+        })
+        
       },
     },
     MuiTextField: {
@@ -252,19 +258,20 @@ const theme = createTheme({
   palette: {
     primary: {
       main: '#3333ff',
-      normal: '#3333ff',
-      dark: '#3333ff',
-      light: '#3333ff',
-      semilight: '#3333ff',
-      contrastText: '#3333ff',
+      normal: '#1a1aff',
+      dark: '#000080',
+      light: '#e6e6ff',
+      semilight: '#ccccff',
+      contrastText: '#6666ff',
+      
     },
     secondary: {
       main: '#ff9933',
-      light: '#ff9933',
-      dark: '#ff9933',
-      darker: '#ff9933',    
-      semilight: '#ff9933',
-      contrastText: '#ff9933',
+      light: '#ffffff',
+      dark: '#b35900',
+      darker: '#663300',    
+      semilight: '#ffb366',
+      contrastText: '#ffa64d',
     },
     greyScale: {
       main: '#E9EBE9',
@@ -306,6 +313,13 @@ const theme = createTheme({
       fontSize: 20,
       fontWeight: 600,
       lineHeight: 1.875,
+    },
+    h5: {
+      fontSize: 24,
+      fontWeight: 400,
+      lineHeight: 1.875,
+      color:'#343446'
+    
     },
     subtitle1: {
       fontSize: 16,

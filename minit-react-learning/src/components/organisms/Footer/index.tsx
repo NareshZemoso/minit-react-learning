@@ -3,7 +3,8 @@ import SelectInput from '../../molecules/Selectinput'
 import Button from '../../atoms/MiniteButton'
 import { Stack } from '@mui/material'
 import { Card, Link } from '@mui/material'
-import MiniteTypography from '../../atoms/Typography'
+import MiniteTypography from '../../atoms/MiniteTypography'
+import {footer} from '../../../utils/constants'
 
 interface SelectOption {
   value: string
@@ -40,30 +41,30 @@ const Footer: React.FC<FooterProps> = ({ height, width, bgcolor }) => {
         bgcolor:{bgcolor}
       }}
     >
-      <Stack direction={'row'} spacing={220} alignItems={'center'} padding={2}>
+      <Stack direction={'row'} spacing={150} alignItems={'center'} padding={2}>
         <Stack direction={'row'} spacing={2}>
           <MiniteTypography variant='h6'>
             <Link href='#' variant='body2' underline='none'>
-              {'Dashboard'}
+              {footer.dashboard}
              
             </Link>
           </MiniteTypography>
           <MiniteTypography variant='h6'>            
             <Link href='#' variant='body2' underline='none'>
-              {'Careers'}
+              {footer.careers}
               
             </Link>
           </MiniteTypography>
           <MiniteTypography variant='h6'>           
             <Link href='#' variant='body2' underline='none'>
-              {'Legal && Privacy'}
+              {footer.legal}
              
             </Link>
           </MiniteTypography>
           <MiniteTypography variant='h6'>
             
             <Link  variant='body2' underline='none' color={'black'}>
-              {'@ 2021 Minite'}
+              {footer.minite}
              
             </Link>
             </MiniteTypography>
@@ -76,7 +77,7 @@ const Footer: React.FC<FooterProps> = ({ height, width, bgcolor }) => {
             variant={'outlined'}
             size={'large'}
           >
-            <MiniteTypography variant='body1' children='NEED HELP'/>
+            <MiniteTypography variant='body1' children={footer.needhelp}/>
             </Button>
         </Stack>
       </Stack>

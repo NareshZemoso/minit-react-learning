@@ -9,6 +9,7 @@ import logout from '../../../../public/assets/logout.png'
 import MiniteIconButton from '../../atoms/MiniteIconButton'
 import { Link, NavLink } from 'react-router-dom'
 
+
 interface CryptoCard {
   height: number
   width: number

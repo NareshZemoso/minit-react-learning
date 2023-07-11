@@ -6,7 +6,7 @@ import graph1 from '../../../../public/assets/graph1.png'
 import pen from '../../../../public/assets/pen.png'
 import plusgrid from '../../../../public/assets/plusgrid.png'
 import list from '../../../../public/assets/list.png'
-import Typography from '../../atoms/Typography'
+import Typography from '../../atoms/MiniteTypography'
 
 interface WatchListProps {
   height?: number

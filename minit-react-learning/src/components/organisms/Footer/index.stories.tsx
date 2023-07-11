@@ -19,7 +19,7 @@ const Template:ComponentStory < typeof Footer>= (args) => (
 export const Primary = Template.bind({});
 Primary.args = {  
   height:100,
-  width:1476,
+  width:1286,
   bgcolor:'FAFCFF'
  
 };
