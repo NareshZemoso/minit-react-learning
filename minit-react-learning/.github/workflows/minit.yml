@@ -1,49 +1,56 @@
-name: Github actions for Front End PR's and Pushes
-
+name: Build
 on:
-  push:
-    branches: [dev]
-    paths:
-      - "frontend-project/**"
-  pull_request:
-    branches: [dev]
-    paths:
-      - "frontend-project/**"
-
+ push:
+   branches:     
+     - minite-demo
+ pull_request:
+   types: [opened, synchronize, reopened, closed]
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: "./frontend-project/"
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x, 14.x]
-
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Install npm dependency
-        run: npm install
-      - name: Build npm project
-        run: npm run build --if-present
-      # - name: Run test cases
-      #   run: npm test
-      # env:
-      #   CI: true
-      - name: Install jest
-        run: npm i -g jest
-        # working-directory: "./frontend-project"
-      - name: Run tests
-        run: jest -u --config ./jest.config.js --coverage
-        # working-directory: './frontend-project'
-      - name: SonarCloud Scan
-        uses: sonarsource/sonarcloud-github-action@master
-        with:
-          projectBaseDir: project_base_dir
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
+ sonarcloud:
+   if: github.event.pull_request.merged == false
+   name: SonarCloud
+   runs-on: ubuntu-latest
+   defaults:
+     run:
+       working-directory: ./minit-react-learning
+   steps:
+     - uses: actions/checkout@v2
+       with:
+         fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
+     - name: Install Dependencies
+       run: npm install --legacy-peer-deps
+     - name: Test and coverage
+       run: npm test src/
+     - name: SonarCloud Scan
+       with:
+         projectBaseDir: ./minit-react-learning
+       uses: SonarSource/sonarcloud-github-action@master
+       env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
+         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+ branchAnalysis: # to get the branch analysis on merge
+   if: github.event.pull_request.merged == true
+   name: Branch Analysis on PR merge
+   runs-on: ubuntu-latest
+   defaults:
+     run:
+       working-directory: ./minit-react-learning
+   steps:
+     - uses: actions/checkout@v2
+       with:
+         fetch-depth: 0
+     - name: Install Dependencies
+       run: npm install --legacy-peer-deps
+     - name: Test and coverage
+       run: npm test src/
+     - name: Storybook deployment in chromatic
+       run: npm run chromatic
+     - name: SonarCloud Scan
+       with:
+         projectBaseDir: ./minit-react-learning
+         args: >
+           -Dsonar.branch.name=master
+       uses: SonarSource/sonarcloud-github-action@master
+       env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
+         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
