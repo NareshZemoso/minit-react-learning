@@ -23,9 +23,9 @@ interface SuccessPageProps {
 }
 
 const success={
-  header:<Header height={82} width={1286} headertext='Dashboard' bgclor='#fafcff' onClick={handleSellButtonClick}/>,
+  header:<Header height={82} width={1286} headertext='Success' bgclor='#fafcff' onClick={handleSellButtonClick}/>,
   footer:<Footer height={82} width={1286} bgcolor='#fafcff'/>,
-  navbar: <Navbar height={800} width={80} bgclor='#fafcff'/>,
+  navbar: <Navbar height={600} width={80} bgclor='#fafcff'/>,
  }
 
 const SuccessPage: React.FC<SuccessPageProps> = ({
@@ -39,7 +39,7 @@ const SuccessPage: React.FC<SuccessPageProps> = ({
 
   const gotoUsd = () => {
     // Navigate to the "/dashboard" route programmatically
-    navigate('/');
+    navigate('/dashboard');
   };
   const sellCrypto = () => {
     // Navigate to the "/dashboard" route programmatically

@@ -8,11 +8,12 @@ module.exports = {
     testEnvironment: "jsdom",
     coverageDirectory: "coverage",
     collectCoverage: true,
-    collectCoverageFrom: ["src/**/*test.{js,jsx,tsx}", "!src/**/*stories.{js,jsx,tsx}"],
+    collectCoverageFrom: ["src/**/*test.{js,jsx,tsx}", "!src/**/*stories.{js,jsx,tsx}",'src/**/*.{js,jsx,ts,tsx}',],
     setupFilesAfterEnv: ["./src/setupTests.ts"],
     coveragePathIgnorePatterns: [
       "<rootDir>/node_modules/",
       ".story.js",
+      ".story.tsx",
       "<rootDir>/assetsTransformer.js",
       "<rootDir>/coverage",
       "<rootDir>/src/assets",
@@ -25,6 +26,7 @@ module.exports = {
     ],
     transform: {
       '^.+\\.(js|jsx|ts|tsx)$': 'ts-jest',
+      '^.+\\.png$': 'jest-transform-stub',
       // Other transform configurations...
     },
   

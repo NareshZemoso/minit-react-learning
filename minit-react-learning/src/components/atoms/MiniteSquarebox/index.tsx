@@ -1,11 +1,12 @@
 import React from 'react'
 import Typography, { TypographyProps } from '@mui/material/Typography'
 import { makeStyles } from '@mui/material'
+import MiniteTypography from '../MiniteTypography'
 
 
 interface MiniteSquareboxProps {
   text: string,
-  variant:'h1'|'h2'|'h3'|'h4'|'h5'|'h6',
+  varient:'h1'|'h2'|'h3'|'h4'|'h5'|'h6'|'body1'|'body2'|'body3'|'subtitle1'|'subtitle2'|'caption'|'captionBold',
   textColor:string,
   onclickText?:() => void
 }
@@ -14,7 +15,7 @@ interface MiniteSquareboxProps {
 
 const MiniteSquarebox: React.FC<MiniteSquareboxProps> = ({
   text,
-  variant,
+  varient,
   onclickText,
   textColor
 }) => {
@@ -25,9 +26,9 @@ const MiniteSquarebox: React.FC<MiniteSquareboxProps> = ({
   return (
     <div >
       <span onClick={onclickText} >
-        <Typography variant={variant} color={textColor}  >
+        <MiniteTypography variant={varient} color={textColor}  >
           {text}
-        </Typography>
+        </MiniteTypography>
       </span>
     </div>
   )

@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = (env) => {
@@ -32,6 +33,7 @@ module.exports = (env) => {
         {
           test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
           use: ['file-loader'],
+
         },
       ],
     },
@@ -42,7 +44,10 @@ module.exports = (env) => {
       new HtmlWebpackPlugin({
         template: path.join(__dirname, 'public', 'index.html'),
         favicon: './public/favicon.png',
-      })
+      }),
+
+      
     ],
+   
   };
 };

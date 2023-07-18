@@ -24,7 +24,7 @@ Primary.args = {
   width:304,
   height:52,
   onclickText:handleTextClick,
-  textColor:'#E8E8F7'
+  textColor:'#7D7D89'
 };
 
 

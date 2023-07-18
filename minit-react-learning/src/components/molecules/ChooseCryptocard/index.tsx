@@ -1,51 +1,61 @@
 import { Card } from '@mui/material';
 import React from 'react';
 import CryptoCardMenu from '../CryptoCardMenu';
-import bitcoin from '../../../../public/assets/bitcoin.png';
-import etherium from '../../../../public/assets/etherium.png';
-import  binance from '../../../../public/assets/binance.png';
-import  tether from '../../../../public/assets/tether.png';
-import  cardano from '../../../../public/assets/cardano.png';
-import  xrp from '../../../../public/assets/xrp.png';
-import  dogecoin from '../../../../public/assets/dogecoin.png';
-import  palkdot from '../../../../public/assets/palkadot.png';
 import Typography from '../../atoms/MiniteTypography';
+import Currency from '../../../redux/States/Currency';
+import loadImage from '../../atoms/LoadImage';
+import { useSelector } from 'react-redux';
 
-interface CryptoCard{
+
+interface ChooseCryptocardProps{
     height:number;
     width:number;
     text:string;   
-    
+    chooseCrypto:(p:Currency) => void;
+  
 }
 
-const componentsArray = [
-    <CryptoCardMenu height={150} width={150} currencyType={'Bitcoin'} amount={'$ 10000'} url={bitcoin}/>,
-    <CryptoCardMenu height={150} width={150} currencyType={'Etherium'} amount={'$ 10000'} url={etherium}/>,
-    <CryptoCardMenu height={150} width={150} currencyType={'Binance'} amount={'$ 10000'} url={binance}/>,
-    <CryptoCardMenu height={150} width={150} currencyType={'Teather'} amount={'$ 10000'} url={tether}/>,
-];
 
-const componentsArray2= [
-  <CryptoCardMenu height={150} width={150} currencyType={'Cardano'} amount={'$ 10000'} url={cardano}/>,
-    <CryptoCardMenu height={150} width={150} currencyType={'xrp'} amount={'$ 10000'} url={xrp}/>,
-    <CryptoCardMenu height={150} width={150} currencyType={'Dogecoin'} amount={'$ 10000'} url={dogecoin}/>,
-    <CryptoCardMenu height={150} width={150} currencyType={'Palkdot'} amount={'$ 10000'} url={palkdot}/>,
-];
-
-const ChooseCryptocard: React.FC<CryptoCard> = ( {height,width,text}) => {
+const ChooseCryptocard: React.FC<ChooseCryptocardProps> = ( {height,width,text,chooseCrypto}) => {
+  
+  var currenciesStore=useSelector((state:any) => state.currencyReducer.currencies);
+  var tableData1: any[] = []; 
+  var temp: any[] = []; 
+  currenciesStore.map((item:Currency) => temp.push({...item}));
+  
  
+  let start = 0;
+  let end = 4;
+  while (start < temp.length) {
+    const sliced = temp.slice(start, end);
+    console.log(sliced);
+    tableData1.push(sliced)
+    
+    // Update start and end indexes for the next iteration
+    start += 4;
+    end += 4;
+  }
+
   return (
     <Card variant="outlined" sx={{ height:{height},width:{width} ,alignItems:'center',borderRadius:0,textAlign:'left',padding:5}} >    
       
-    <Typography variant="h3" alignContent={'flex-start'} fontSize="xl" sx={{ mb: 0.5 }}>
+    <Typography variant="h3" >
       {text}
     </Typography>
-    <span style={{display:'flex',flexDirection:'row'}}>
-     {componentsArray.map((component,index) => (<div>{component}</div>))}
-    </span>
-    <span style={{display:'flex',flexDirection:'row'}}>
-      {componentsArray2.map((component,index) => (<div>{component}</div>))}
-    </span>
+    <table>
+      <tbody>
+        {tableData1.map((row:any, rowIndex) => (
+          <tr key={rowIndex}>
+            {row.map((item: Currency, columnIndex: React.Key | null | undefined) => (
+              <td key={columnIndex}>
+              
+              <CryptoCardMenu height={150} width={150} currencyType={item.currencyType} amount={item.amount} url={loadImage(item.url)} handleClick={()=>chooseCrypto(item)}/>
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
   </Card>
   );
 };

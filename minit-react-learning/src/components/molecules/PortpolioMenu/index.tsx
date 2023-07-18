@@ -33,8 +33,8 @@ const PortpolioMenu: React.FC<PortpolioMenuProps> = ({
       sx={{
         height: { height },
         width: { width },
-        alignItems: 'center',
-        borderRadius: 0
+        alignItems: 'left',
+       
       }}
       onClick={handleNeedHelp}
     >
@@ -47,7 +47,7 @@ const PortpolioMenu: React.FC<PortpolioMenuProps> = ({
             direction={'column'}
             margin={2}
           >
-            <Typography variant='body1' fontSize='xl' sx={{ mb: 0.5 }}>
+            <Typography variant='body1'>
               {currencyType}
             </Typography>
             <Typography variant='body1'>{code}</Typography>
@@ -56,7 +56,7 @@ const PortpolioMenu: React.FC<PortpolioMenuProps> = ({
 
         <Stack
           spacing={1}
-          alignItems={'center'}
+          alignItems={'left'}
           direction={'column'}
           marginLeft={2}
         >

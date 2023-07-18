@@ -2,6 +2,7 @@ import { Card, Stack } from '@mui/material';
 import React from 'react';
 import MuiIcon from '../../atoms/MuiIcon'; 
 import Typography from '../../atoms/MiniteTypography';
+import { Portfoliomenu } from '../PortpolioMenuList';
 
 interface CryptoCardMenuProps{
     height?:number;
@@ -9,9 +10,10 @@ interface CryptoCardMenuProps{
     currencyType:string;
     amount:string;
     url:string;
+    handleClick: () => void;
 }
 
-const CryptoCardMenu: React.FC<CryptoCardMenuProps> = ( {height,width,currencyType,amount,url}) => {
+const CryptoCardMenu: React.FC<CryptoCardMenuProps> = ( {height,width,currencyType,amount,url,handleClick}) => {
 
 
   function handleNeedHelp(): void {
@@ -21,8 +23,8 @@ const CryptoCardMenu: React.FC<CryptoCardMenuProps> = ( {height,width,currencyTy
 
   return (
     
-<Card variant="outlined" sx={{ height:{height},width:{width} ,alignItems:'center',borderRadius:0}} onClick={handleNeedHelp}>    
-    <Stack spacing={4} alignItems={'center'} direction={'column'} margin={2}>
+<Card variant="outlined" sx={{ height:{height},width:{width} ,alignItems:'center',borderRadius:0, padding:2}} onClick={handleClick}>    
+    <Stack spacing={3} alignItems={'center'} direction={'column'} margin={2}>
     <MuiIcon url={url} height={42} width={42} />   
     <Typography variant='body1' fontSize="xl" sx={{ mb: 0.5 }}>
       {currencyType}

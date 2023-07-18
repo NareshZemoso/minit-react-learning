@@ -6,34 +6,33 @@ import avatar from '../../../../public/assets/avatar.png'
 import Dropdown from '../../atoms/Dropdown'
 import MiniteTypography from '../../atoms/MiniteTypography'
 import { useNavigate } from 'react-router-dom'
-import {header} from '../../../utils/constants'
+import { header } from '../../../utils/constants'
 
 interface HeaderProps {
-  
   height: number
   width: number
-  headertext:string
-  bgclor:string
-  onClick?:() => void
+  headertext: string
+  bgclor: string  
 }
-
-
 
 const handleNeedHelp = () => {
   console.log('Need help')
   alert('Need help')
-  
 }
 
-
-const Header: React.FC<HeaderProps> = ({onClick, height, width,headertext,bgclor }) => {
-
-  const navigate = useNavigate();
+const Header: React.FC<HeaderProps> = ({
+ 
+  height,
+  width,
+  headertext,
+  bgclor
+}) => {
+  const navigate = useNavigate()
 
   const handleSellButtonClick = () => {
     // Navigate to the "/dashboard" route programmatically
-    navigate('/sellCheckout');
-  };
+    navigate('/sellCheckout')
+  }
 
   return (
     <Card
@@ -44,10 +43,16 @@ const Header: React.FC<HeaderProps> = ({onClick, height, width,headertext,bgclor
         alignItems: 'center',
         borderRadius: 0,
         textAlign: 'left',
-        bgcolor:{bgclor}
+        bgcolor: { bgclor }
       }}
     >
-      <Stack spacing={200} direction={'row'} marginLeft={5} alignItems={'center'} marginTop={3}>
+      <Stack
+        spacing={200}
+        direction={'row'}
+        marginLeft={5}
+        alignItems={'center'}
+        marginTop={3}
+      >
         <Stack alignContent={'start'}>
           <MiniteTypography variant='h5' padding={1}>
             {headertext}
@@ -62,7 +67,7 @@ const Header: React.FC<HeaderProps> = ({onClick, height, width,headertext,bgclor
             size={'large'}
           >
             <MiniteTypography variant='body1' color={'white'}>
-            {header.sell}
+              {header.sell}
             </MiniteTypography>
           </MiniteButton>
           <MiniteButton
@@ -72,7 +77,7 @@ const Header: React.FC<HeaderProps> = ({onClick, height, width,headertext,bgclor
             size={'large'}
           >
             <MiniteTypography variant='body1' color={'white'}>
-            {header.buy}
+              {header.buy}
             </MiniteTypography>
           </MiniteButton>
           <MiniteAvatar imageUrl={avatar} size={32} />

@@ -314,17 +314,33 @@ const theme = createTheme({
       fontWeight: 600,
       lineHeight: 1.875,
     },
+    h4: {
+      fontSize: 20,
+      fontWeight: 600,
+      lineHeight: 1.875,
+    },
     h5: {
       fontSize: 24,
       fontWeight: 400,
       lineHeight: 1.875,
-      color:'#343446'
+      color:'#343446',
+      fontFamily: 'Graphik',
+    
+    },
+    h6: {
+      fontSize: 24,
+      fontWeight: 400,
+      lineHeight: 1.875,
+      fontFamily: 'Graphik',
+      color:'#4B4B60'
     
     },
     subtitle1: {
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.5,
+      fontSize: 20,
+      fontWeight: 500,
+      lineHeight: 2,
+      fontFamily: 'Graphik',
+      color:'#343446' 
     },
     subtitle2: {
       fontSize: 16,
@@ -332,14 +348,18 @@ const theme = createTheme({
       lineHeight: 1.5,
     },
     body1: {
-      fontSize: 14,
-      fontWeight: 600,
-      lineHeight: 1.375,
-    },
-    body2: {
-      fontSize: 14,
+      fontSize: 16,
       fontWeight: 500,
       lineHeight: 1.375,
+      fontFamily: 'Graphik',
+      color:'#343446'
+    },
+    body2: {
+      fontSize: 16,
+      fontWeight: 400,
+      lineHeight: 1.375,
+      fontFamily: 'Graphik',
+      color:'#000000'
     },
     body3: {
       fontSize: 48,
@@ -348,16 +368,28 @@ const theme = createTheme({
       fontFamily: 'Montserrat',
     },
     caption: {
-      fontSize: 12,
+      fontSize: 14,
       fontWeight: 500,
       lineHeight: 1,
+      fontFamily: 'Graphik',
+      color:'#7D7D89',
     },
     captionBold: {
-      fontSize: 12,
-      fontWeight: 700,
+      fontSize: 16,
+      fontWeight: 500,
       lineHeight: 1,
-      fontFamily: 'Montserrat',
+      fontFamily: 'Graphik',
+      color:'#343446'
     },
+    overline: {
+      fontSize: 12,
+      fontWeight: 400,
+      lineHeight: 1.875,
+      fontFamily: 'Graphik',
+      color:'#20B03F'
+    
+    },
+   
     fontFamily: [
       '"Montserrat"',
       '-apple-system',

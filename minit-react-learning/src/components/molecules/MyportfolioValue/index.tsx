@@ -65,7 +65,7 @@ const MyportfolioValue: React.FC<MyportfolioValueProps> = ({
                 {myportpoliovalue.totalinvestmentvalue}
               </Typography>
             </Stack>
-            <TimePeriodcard height={52} width={304} textColor={'#E8E8F7'} onclickText={handleNeedHelp}/>
+            <TimePeriodcard height={52} width={304} textColor={'#7D7D89'} onclickText={handleNeedHelp}/>
             </Stack>
           </Card>
           <Stack alignItems={'center'} marginTop={10}>

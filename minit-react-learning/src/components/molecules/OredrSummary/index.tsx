@@ -7,17 +7,21 @@ import delivery from '../../../../public/assets/delivery.png'
 import rupeecoin from '../../../../public/assets/rupeecoin.png'
 import Typography from '../../atoms/MiniteTypography'
 import { ordersummary } from '../../../utils/constants'
+import { Portfoliomenu } from '../PortpolioMenuList'
+import Currency from '../../../redux/States/Currency'
 
 interface OrderSummaryProps {
   width: number
   height: number
   onClick: () => void
+  portfoliomenu: Currency |undefined
 }
 
 const OrderSummary: React.FC<OrderSummaryProps> = ({
   width,
   height,
-  onClick
+  onClick,
+  portfoliomenu
 }) => {
   return (
     <Card sx={{ height: { height }, width: { width }, padding: 5 }}>
@@ -25,7 +29,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
 
       <Stack spacing={5} direction={'column'} alignItems={'center'}>
         <Typography variant='body1'>{ordersummary.selllabel}</Typography>
-        <Typography variant='h2'>{ordersummary.sellvalue}</Typography>
+        <Typography variant='h2'>{portfoliomenu === undefined ?100:portfoliomenu.amount}</Typography>
         <Typography variant='body1'>{ordersummary.btc}</Typography>
       </Stack>
 

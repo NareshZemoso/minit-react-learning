@@ -1,4 +1,4 @@
-import { Card, Chip, Stack } from '@mui/material'
+import { Card, Chip, Link, Stack } from '@mui/material'
 import React from 'react'
 import MuiIcon from '../../atoms/MuiIcon'
 import bitcoin from '../../../../public/assets/bitcoin.png'
@@ -7,6 +7,7 @@ import pen from '../../../../public/assets/pen.png'
 import plusgrid from '../../../../public/assets/plusgrid.png'
 import list from '../../../../public/assets/list.png'
 import Typography from '../../atoms/MiniteTypography'
+import { useNavigate } from 'react-router-dom'
 
 interface WatchListProps {
   height?: number
@@ -27,6 +28,7 @@ const WatchList: React.FC<WatchListProps> = ({
     console.log('Clicked')
     alert('Clicked')
   }
+  const navigate = useNavigate()
 
   return (
     <>
@@ -49,7 +51,17 @@ const WatchList: React.FC<WatchListProps> = ({
               margin={2}
             >
               <Typography variant='body1'>Watchlist</Typography>
-              <Typography variant='body1'>Discover assets</Typography>
+             
+              <Link
+                  component="button"
+                  variant="body1"
+                  onClick={() => {
+                    console.info("I'm a button.");
+                    navigate('/tradeDetails');
+                  }}
+                >
+                  <Typography variant='body1'>Discover assets</Typography>
+                </Link>
             </Stack>
             <Stack
               spacing={4}

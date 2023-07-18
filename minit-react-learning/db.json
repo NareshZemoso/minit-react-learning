@@ -7,5 +7,193 @@
       { "id": 2, "body": "some comment2", "postId": 2 },
       { "id": 3, "body": "some comment3", "postId": 3 }
     ],
-    "profile": { "name": "typicode" }
+    "profile": { "name": "typicode" },
+
+    "portfoliomenu": [
+       {  
+        "sold":false,
+        "id": 1,
+         "currencyType": "Bitcoin",
+         "amount": "$ 25",
+         "url": "bitcoin",
+         "code": "BTC",
+         "increment": "+ 0.007 %"
+       },
+       {  
+        "sold":false,
+        "id": 2,
+         "currencyType": "Binance",
+         "amount": "$ 40",
+         "url": "binance",
+         "code": "BTC",
+         "increment": "+ 0.008 %"
+       },
+       {  
+        "sold":false,
+        "id": 3,
+         "currencyType": "Dogecoin",
+         "amount": "$ 20",
+         "url": "dogecoin",
+         "code": "BTC",
+         "increment": "+ 0.007 %"
+       },
+       {  
+        "sold":false,
+        "id": 4,
+         "currencyType": "Cardano",
+         "amount": "$ 25",
+         "url": "cardano",
+         "code": "BTC",
+         "increment": "+ 0.007 %"
+       },
+       {  
+        "sold":false,
+        "id": 5,
+         "currencyType": "Etherium",
+         "amount": "$ 250",
+         "url": "etherium",
+         "code": "BTC",
+         "increment": "+ 0.001 %"
+       },
+       {  
+        "sold":false,
+        "id": 6,
+         "currencyType": "Tether",
+         "amount": "$ 250",
+         "url": "tether",
+         "code": "BTC",
+         "increment": "+ 0.001 %"
+       },
+       {  
+        "sold":false,
+        "id": 7,
+         "currencyType": "Xrp",
+         "amount": "$ 50",
+         "url": "xrp",
+         "code": "BTC",
+         "increment": "+ 0.001 %"
+       },
+       {  
+        "sold":true,
+        "id": 8,
+         "currencyType": "Palkadot",
+         "amount": "$ 50",
+         "url": "palkadot",
+         "code": "BTC",
+         "increment": "+ 0.001 %"
+       }
+             
+    ],
+
+
+    "currencies": [
+      {  
+        "id": 1,
+        "amount": "$ 250",
+        "currencyType": "Bitcoin",  
+        "code": "BTC",      
+        "url": "bitcoin",        
+        "sold":false,
+        "increment": "+ 0.007 %",
+        "price":"676767",
+        "marketcapital":"98889989 $",
+        "watch":false,
+        "circulatingsupply":"667676 USD"
+      },
+      {  
+        "id": 2,
+        "amount": "$ 2500",
+        "currencyType": "Binance",  
+        "code": "BNC",      
+        "url": "binance",        
+        "sold":false,
+        "increment": "+ 0.001 %",
+        "price":"676767",
+        "marketcapital":"98889989 $",
+        "watch":false,
+        "circulatingsupply":"667676 USD"
+      },
+      {  
+        "id": 3,
+        "amount": "$ 2500",
+        "currencyType": "Etherium",  
+        "code": "ETH",      
+        "url": "etherium",        
+        "sold":false,
+        "increment": "+ 0.001 %",
+        "price":"676767",
+        "marketcapital":"98889989 $",
+        "watch":false,
+        "circulatingsupply":"667676 USD"
+      },
+      {  
+        "id": 4,
+        "amount": "$ 1500",
+        "currencyType": "Cardano",  
+        "code": "CDA",      
+        "url": "cardano",        
+        "sold":false,
+        "increment": "+ 0.001 %",
+        "price":"676767",
+        "marketcapital":"98889989 $",
+        "watch":false,
+        "circulatingsupply":"667676 USD"
+      },
+      {  
+        "id": 5,
+        "amount": "$ 1500",
+        "currencyType": "Dogecoin",  
+        "code": "DGC",      
+        "url": "dogecoin",        
+        "sold":false,
+        "increment": "+ 0.001 %",
+        "price":"676767",
+        "marketcapital":"98889989 $",
+        "watch":false,
+        "circulatingsupply":"667676 USD"
+      },
+      {  
+        "id": 6,
+        "amount": "$ 1500",
+        "currencyType": "Palkadot",  
+        "code": "PKD",      
+        "url": "palkadot",        
+        "sold":false,
+        "increment": "+ 0.001 %",
+        "price":"676767",
+        "marketcapital":"98889989 $",
+        "watch":true,
+        "circulatingsupply":"667676 USD"
+      },
+      {  
+        "id": 7,
+        "amount": "$ 15900",
+        "currencyType": "Tether",  
+        "code": "TKD",      
+        "url": "tether",        
+        "sold":false,
+        "increment": "+ 0.001 %",
+        "price":"676767",
+        "marketcapital":"98889989 $",
+        "watch":false,
+        "circulatingsupply":"667676 USD"
+      },
+      {  
+        "id": 8,
+        "amount": "$ 15900",
+        "currencyType": "Xrp",  
+        "code": "XRP",      
+        "url": "xrp",        
+        "sold":false,
+        "increment": "+ 0.001 %",
+        "price":"676767",
+        "marketcapital":"98889989 $",
+        "watch":false,
+        "circulatingsupply":"667676 USD"
+      }
+
+
+    ]
+
+
   }

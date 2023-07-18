@@ -31,12 +31,12 @@ const TimePeriodcard: React.FC<TimePeriodcardProps> = ({
       
     >
       <Stack spacing={5} direction={'row'} alignItems={'center'} padding={3}>
-      <MiniteSquarebox text={'1H'} variant={'h6'} textColor={textColor} onclickText={onclickText}/>
-      <MiniteSquarebox text={'24H'} variant={'h6'} onclickText={onclickText} textColor={textColor}/>
-      <MiniteSquarebox text={'1W'} variant={'h6'} onclickText={onclickText} textColor={textColor}/>
-      <MiniteSquarebox text={'1M'} variant={'h6'} onclickText={onclickText} textColor={textColor}/>
-      <MiniteSquarebox text={'1Y'} variant={'h6'} onclickText={onclickText} textColor={textColor}/>
-      <MiniteSquarebox text={'ALL'} variant={'h6'} onclickText={onclickText} textColor={textColor}/>
+      <MiniteSquarebox text={'1H'} varient={'caption'} textColor={textColor} onclickText={onclickText}/>
+      <MiniteSquarebox text={'24H'} varient={'caption'} onclickText={onclickText} textColor={textColor}/>
+      <MiniteSquarebox text={'1W'} varient={'caption'} onclickText={onclickText} textColor={textColor}/>
+      <MiniteSquarebox text={'1M'} varient={'caption'} onclickText={onclickText} textColor={textColor}/>
+      <MiniteSquarebox text={'1Y'} varient={'caption'} onclickText={onclickText} textColor={textColor}/>
+      <MiniteSquarebox text={'ALL'} varient={'caption'} onclickText={onclickText} textColor={textColor}/>
       </Stack>
     </Card>
   )
