@@ -1,10 +1,8 @@
 import * as React from 'react'
 import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
-import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import {
-  Stack,
   Table,
   TableBody,
   TableCell,
@@ -20,12 +18,8 @@ import {
   removeFromWatchList
 } from '../../../redux/Reducers/WatchListSlice'
 import {
-  addCurrency,
-  updateCurrency,
-  removeCurrency
-} from '../../../redux/Reducers/CurrencySlice'
+  updateCurrency} from '../../../redux/Reducers/CurrencySlice'
 import { useDispatch, useSelector } from 'react-redux'
-import MiniteIconButton from '../../atoms/MiniteIconButton'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { addCurrencyDetails, removeCurrencyDetails } from '../../../redux/Reducers/CurrencyDetailSlice'
@@ -63,7 +57,7 @@ function a11yProps (index: number) {
   }
 }
 
-const TradeTab: React.FC = ({}) => {
+const TradeTab: React.FC = () => {
   const [value, setValue] = useState(0)
 
   const [currency, setCurrency] = useState<Currency>()
@@ -78,10 +72,12 @@ const TradeTab: React.FC = ({}) => {
     (state: any) => state.currencyReducer.currencies
   )
 
+  //Currency list
   var cList: Currency[] = []
   currenciesStore.map((c: Currency) => cList.push({ ...c }))
   console.log('cList  ' + cList)
 
+  //Watch list
   var wList: Currency[] = []
   watchListStore.map((c: Currency) => wList.push({ ...c }))
  
@@ -106,47 +102,37 @@ const TradeTab: React.FC = ({}) => {
     alert(row.watch)
     if (row.watch) {
       console.log(row.watch)
-      const upadted: Currency = {
-        id: row.id,
-        amount: row.amount,
-        currencyType: row.currencyType,
-        code: row.code,
-        url: row.url,
-        sold: row.sold,
-        increment: row.increment,
-        price: row.price,
-        marketcapital: row.marketcapital,
-        watch: false,
-        circulatingsupply: row.circulatingsupply
-      }
+      const upadted: Currency = {...row};
+      upadted.watch=false;
+      
       dispatch(removeFromWatchList(upadted))
       //dispatch(removeCurrency(row))
       dispatch(updateCurrency(upadted))
     } else {
-      const upadted: Currency = {
-        id: row.id,
-        amount: row.amount,
-        currencyType: row.currencyType,
-        code: row.code,
-        url: row.url,
-        sold: row.sold,
-        increment: row.increment,
-        price: row.price,
-        marketcapital: row.marketcapital,
-        watch: true,
-        circulatingsupply: row.circulatingsupply
-      }
+      const upadted: Currency = {...row}
+      upadted.watch=true;
       dispatch(addToWatchList(upadted))
       //dispatch(removeCurrency(row))
       dispatch(updateCurrency(upadted))
     }
   }
 
+    const watch :Currency[]=[];
+ // function updateWatchList1(){
+    cList.map((c:Currency)=> 
+    {if(c.watch){
+      watch.push(c);     
+     }});
+ // }
+
+// dispatch(addToWatchList(watch));
+
   useEffect(() => {
     function updateWatchListstate () {
       wList = []
       watchListStore.map((c: Currency) => wList.push(c))
       setWatchListState(wList)
+     
     }
 
     function updateCurrencyListstate () {
@@ -155,6 +141,9 @@ const TradeTab: React.FC = ({}) => {
       setCurrencyListState(cList)
     }
 
+   
+
+   // updateWatchList1();
     updateCurrencyListstate()
     updateWatchListstate()
     return () => {
@@ -168,7 +157,7 @@ const TradeTab: React.FC = ({}) => {
         <Tabs
           value={value}
           onChange={handleChange}
-          aria-label='basic tabs example'
+          aria-label='basic tabs'
         >
           <Tab label='All Assets' {...a11yProps(0)} />
           <Tab label='Watch List' {...a11yProps(1)} />
@@ -182,13 +171,13 @@ const TradeTab: React.FC = ({}) => {
                 <TableCell padding={'normal'} width={220}>
                   <MiniteTypography variant='h6' children='Name' />
                 </TableCell>
-                <TableCell padding='normal' width={200}>
+                <TableCell padding='normal' width={250}>
                   <MiniteTypography variant='h6' children='Price' />
                 </TableCell>
-                <TableCell padding='normal' width={200}>
+                <TableCell padding='normal' width={250}>
                   <MiniteTypography variant='h6' children='Change' />
                 </TableCell>
-                <TableCell padding='normal' width={300}>
+                <TableCell padding='normal' width={230}>
                   <MiniteTypography variant='h6' children='Market Cap' />
                 </TableCell>
                 <TableCell padding='normal'>
@@ -234,13 +223,13 @@ const TradeTab: React.FC = ({}) => {
               <TableCell padding={'normal'} width={220}>
                   <MiniteTypography variant='h6' children='Name' />
                 </TableCell>
-                <TableCell padding='normal' width={200}>
+                <TableCell padding='normal' width={250}>
                   <MiniteTypography variant='h6' children='Price' />
                 </TableCell>
-                <TableCell padding='normal' width={200}>
+                <TableCell padding='normal' width={250}>
                   <MiniteTypography variant='h6' children='Change' />
                 </TableCell>
-                <TableCell padding='normal' width={300}>
+                <TableCell padding='normal' width={230}>
                   <MiniteTypography variant='h6' children='Market Cap' />
                 </TableCell>
                 <TableCell padding='normal'>
