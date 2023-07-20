@@ -1,0 +1,15 @@
+<Card variant='outlined' sx={{ height: 100, with: 500 }}>
+        <Stack spacing={2} direction={'column'}>
+          <Stack spacing={2} direction={'row'}>
+            <Typography variant='body1'>$ 100</Typography>
+            <MiniteButton onClick={onClick} variant={'outlined'} size={'large'}>
+              sell max
+            </MiniteButton>
+          </Stack> 
+         
+          <Stack spacing={2} direction={'row'}>
+            <Typography variant='body1'>$ 100</Typography>
+            <Typography variant='body1'>USD Coin Cash</Typography>
+          </Stack>
+        </Stack>
+      </Card>

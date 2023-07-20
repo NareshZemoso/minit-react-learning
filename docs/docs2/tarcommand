@@ -1,0 +1,10 @@
+
+
+tar -C /usr/local --strip-components 1 -xJf node-v6.9.2-linux.x64.tar.xz
+
+tar -C /usr/local --strip-components 1 -xJf node-v18.16.0-linux-x64.tar.xz
+
+update angular client version 
+ng update @angular/cli @angular/core
+
+npm install @angular/cli@13.3.x

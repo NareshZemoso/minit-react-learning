@@ -1,0 +1,56 @@
+test
+
+CREATE DATABASE IF NOT EXISTS mydatabase;
+
+find . -name "*.txt"   
+
+
+Find a directory
+
+The ' type -d' option is used to find a directory. Consider the below command: 
+
+find . type -depth -name java
+
+grep 9 marks.txt  
+    grep <searchWord> <file name>  
+        grep -i <searchWord> <fileName>  
+        
+        
+        
+
+
+ git clone <repository URL>  
+ 
+ git clone https://github.com/zemoso-int/code-zorro-backend.git
+ 
+ git clone https://github.com/NareshZemoso/code-zorro-backend.git
+ 
+  git commit -m "Commit message."  
+  
+  
+  modify message
+  git commit -am "Commit message."  
+  
+  git push --verbose  
+  
+   git pull  
+   
+   ssh-keygen -t ed25519 -C "naresh.c@zemosolabs.com"
+   
+   https://www.loom.com/share/9550be22a0884093b1c4a3a681cd9736
+   
+   
+   Zemoso Culture:
+   zemoso DNA
+   
+   
+   Good Morning:
+Worked on review comments
+Completed the Promotional email jira in shopizer
+worked on Problem solving assignment
+
+ Today : continue work on react learning
+ 
+ admin@shopizer.com
+ 
+ $2a$10$y4Ia2/se9LzJDXPKXABadO.PIF8YnGgE/L0BwyCqBhdXUGX9j6tK2
